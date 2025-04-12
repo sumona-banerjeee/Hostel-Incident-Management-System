@@ -1,0 +1,80 @@
+/* Google Font for Material Design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(college.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for better visibility */
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    height: 350px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.input-container i {
+    margin-right: 10px;
+    color: #888;
+}
+
+.input-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.login-btn {
+    background: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #3700b3;
+    box-shadow: 0 4px 10px rgba(98, 0, 234, 0.2);
+}
