@@ -1,4 +1,17 @@
 <?php
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html"); // Redirect to login page if not logged in
+exit();
+}
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html"); // Redirect to login page if not logged in
+exit();
+}
+
 include 'db.php'; // Ensure this connects to your database
 
 if (isset($_GET['id'])) {

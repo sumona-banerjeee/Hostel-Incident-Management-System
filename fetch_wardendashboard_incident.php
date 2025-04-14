@@ -1,6 +1,6 @@
 <?php
 include 'db.php'; // Make sure this file correctly connects to your database
-session_start();
+//session_start();
 //$query = "SELECT IncidentID, Rollno, Status FROM incident WHERE $_SESSION['user_id'] = WardenEmail";
 
 $query = "SELECT IncidentID, Rollno, Status FROM incident WHERE WardenEmail = '" . $_SESSION['user_id'] . "'";

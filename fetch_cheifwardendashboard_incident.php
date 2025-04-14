@@ -1,6 +1,6 @@
 <?php
 include 'db.php'; // Make sure this file correctly connects to your database
-session_start();
+//session_start();
 
 $query = "SELECT IncidentID, Rollno, Status FROM incident";
 $result = mysqli_query($conn, $query);

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html"); // Redirect to login page if not logged in
+exit();
+}
+?>
 <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +17,7 @@
 <body>
     <div class="container">
         <h4>Welcome, <span id="wardenName">Student</span></h4>
+        <a href="logout.php" class="btn waves-effect waves-light" id="logout">Log Out</a>
     
     <table class="highlight responsive-table">
         <thead>

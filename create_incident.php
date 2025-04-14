@@ -1,6 +1,12 @@
 <?php
-include 'db.php';
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html"); // Redirect to login page if not logged in
+exit();
+} 
+
+include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullName = $_POST['fullName'];

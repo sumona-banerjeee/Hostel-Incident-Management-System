@@ -39,3 +39,14 @@ td a {
 td a:hover {
     text-decoration: underline;
 }
+
+.button-wrap {
+    position: relative;
+    overflow: auto; /* clears the float */
+    margin-top: 20px;
+}
+
+#logout {
+    background-color: #00796b;
+    float:right;
+}
