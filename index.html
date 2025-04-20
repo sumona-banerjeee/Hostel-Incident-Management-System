@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" method="POST">
+            <div class="input-container">
+                <i class="material-icons">email</i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-container">
+                <i class="material-icons">lock</i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#loginForm").submit(function(event){
+                event.preventDefault(); // Prevent default form submission
+                
+                $.ajax({
+                    url: "login.php",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.trim() === "success student") {
+                            window.location.href = "studentdashboard.php"; // Redirect on success
+                        }
+                        else if (response.trim() === "success warden"){
+                            window.location.href = "wardendashboard.php";
+                        } 
+                        else if (response.trim() === "success cheif warden"){
+                            window.location.href = "cheifwardendashboard.php";
+                        }
+                        else if (response.trim() === "successsecurityincharge"){
+                            window.location.href = "securitydashboard.php";
+                        }
+                        else if (response.trim() === "success registrar"){
+                            window.location.href = "registerardashboard.php";
+                        } 
+                        else if (response.trim() === "successaccounts"){
+                            window.location.href = "accountsdashboard.php";
+                        }   
+                        else {
+                            $("#message").html("<span style='color: red;'>" + response + "</span>");
+                        }
+                    },
+                    error: function() {
+                        $("#message").html("<span style='color: red;'>Error in request.</span>");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
