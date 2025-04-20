@@ -110,7 +110,7 @@ Hostel-Incident-Management/
 └── assets/
     ├── css/
     └── images/
-
+```
 
 ## 🔐 Security Notes
 PHP sessions with role validation for each dashboard
